@@ -7,11 +7,9 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
 	<!-- Google Font -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    
 
 	<!-------->
 
@@ -22,7 +20,6 @@
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 		}
-
 
 		.navMenu {
             font-family: "Open Sans", sans-serif;
@@ -45,11 +42,9 @@
 
 		.border {
 			border: 1px solid #cccccc;
-
 		}
 
 		.navMenu a:hover {
-
 			color: #d5e0cf;
 		}
 	</style>
@@ -57,57 +52,50 @@
 
 <body>
 
-	<nav class="navMenu  border background">
-		<a id="komihag" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-thumbtack"></i></a>
-		<a id="attgora" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list"></i> Att göra</a>
-		<a id="unga" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-gamepad"></i> Unga</a>
-		<a id="marknad" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-seedling"></i> Marknad</a>
-		<a id="trovardighet" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-comments"></i> Trovärdighet</a>
-		<a id="mangfald" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-person-burst"></i> Mångfald</a>
-		<a id="insikter" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-comment-dots"></i> Insikter</a>
-		<a id="projekt" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-bookmark"></i> Projekt</a>
-		<a id="annat" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> Annat</a>
-		<a id="personligt" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Personligt</a>
-
-
-
+	<nav class="navMenu border background">
+		<a id="komihag" onclick="navigate(event, this.id)" href="#"> <i class="fa-solid fa-thumbtack"></i></a>
+		<a id="attgora" onclick="navigate(event, this.id)" href="#"> <i class="fa-solid fa-list"></i> Att göra</a>
+		<a id="unga" onclick="navigate(event, this.id)" href="#"> <i class="fa-solid fa-gamepad"></i> Unga</a>
+		<a id="marknad" onclick="navigate(event, this.id)" href="#"> <i class="fa-solid fa-seedling"></i> Marknad</a>
+		<a id="trovardighet" onclick="navigate(event, this.id)" href="#"> <i class="fa-solid fa-comments"></i> Trovärdighet</a>
+		<a id="mangfald" onclick="navigate(event, this.id)" href="#"> <i class="fa-solid fa-person-burst"></i> Mångfald</a>
+		<a id="insikter" onclick="navigate(event, this.id)" href="#"> <i class="fa-solid fa-comment-dots"></i> Insikter</a>
+		<a id="projekt" onclick="navigate(event, this.id)" href="#"> <i class="fa-solid fa-bookmark"></i> Projekt</a>
+		<a id="annat" onclick="navigate(event, this.id)" href="#"> <i class="fa-solid fa-book"></i> Annat</a>
+		<a id="personligt" onclick="navigate(event, this.id)" href="#"> <i class="fa-solid fa-house"></i> Personligt</a>
 	</nav>
 
-
 	<script>
-
 		let direction = "horizontal";
 		if (direction === "vertical") {
 			document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
 		}
 
+		function navigate(event, id) {
+			event.preventDefault(); // Förhindrar standardbeteendet
 
-		function navigate(id) {
-    if (id == 'komihag')
-        window.location.href = "https://www.notion.so/Kom-ih-g-lappar-a39052c515344584b007e790adfaad81";
-    else if (id == "attgora")
-        window.location.href = "https://www.notion.so/Att-g-ra-2585e2e6c21a4e32a79f3d1e01ec03d8";
-    else if (id == "unga")
-        window.location.href = "https://www.notion.so/Unga-arbetet-b9982913c0b24c329d421d6cdf57dde0";
-    else if (id == "marknad")
-        window.location.href = "https://www.notion.so/Marknad-00f81fa66cc24a34b8fa4cfa4e26d20fm";
-    else if (id == "trovardighet")
-        window.location.href = "https://www.notion.so/Trov-rdighet-7b643d011a9c4499b3623a42a25f8b99";
-    else if (id == "mangfald")
-        window.location.href = "https://www.notion.so/M-ngfaldsarbete-30a234e06dd7454f857d3f53a5520c77";
-    else if (id == "insikter")
-        window.location.href = "https://www.notion.so/Insikter-d8445e5ed5bd405da6446a3366b4c960";
-    else if (id == "projekt")
-        window.location.href = "https://www.notion.so/Projekt-97ac545da7974e15841532a1c51976fb";
-    else if (id == "annat")
-        window.location.href = "https://www.notion.so/Andra-anteckningar-a7c4748e33b14e168b4de0403d603a51";
-    else if (id == "personligt")
-        window.location.href = "https://www.notion.so/Life-hub-0c84087a38a94feb85baea3ccb69fcdd";
-}
-
+			if (id == 'komihag')
+				window.location.href = "https://www.notion.so/Kom-ih-g-lappar-a39052c515344584b007e790adfaad81";
+			else if (id == "attgora")
+				window.location.href = "https://www.notion.so/Att-g-ra-2585e2e6c21a4e32a79f3d1e01ec03d8";
+			else if (id == "unga")
+				window.location.href = "https://www.notion.so/Unga-arbetet-b9982913c0b24c329d421d6cdf57dde0";
+			else if (id == "marknad")
+				window.location.href = "https://www.notion.so/Marknad-00f81fa66cc24a34b8fa4cfa4e26d20fm";
+			else if (id == "trovardighet")
+				window.location.href = "https://www.notion.so/Trov-rdighet-7b643d011a9c4499b3623a42a25f8b99";
+			else if (id == "mangfald")
+				window.location.href = "https://www.notion.so/M-ngfaldsarbete-30a234e06dd7454f857d3f53a5520c77";
+			else if (id == "insikter")
+				window.location.href = "https://www.notion.so/Insikter-d8445e5ed5bd405da6446a3366b4c960";
+			else if (id == "projekt")
+				window.location.href = "https://www.notion.so/Projekt-97ac545da7974e15841532a1c51976fb";
+			else if (id == "annat")
+				window.location.href = "https://www.notion.so/Andra-anteckningar-a7c4748e33b14e168b4de0403d603a51";
+			else if (id == "personligt")
+				window.location.href = "https://www.notion.so/Life-hub-0c84087a38a94feb85baea3ccb69fcdd";
 		}
 	</script>
-
 
 </body>
 
